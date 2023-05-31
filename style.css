@@ -1,0 +1,124 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: normal;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: #36E7D6;
+  background: -webkit-linear-gradient(left, #690c75 0%, #ff0077 100%);
+}
+
+.calculator-grid {
+  display: grid;
+  justify-content: center;
+  align-content: flex-start;
+  padding-top: 30px;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 80px);
+  /* Riduci la larghezza delle colonne a 80px */
+  grid-template-rows: minmax(100px, auto) repeat(5, 80px);
+  /* Riduci l'altezza delle righe a 80px */
+  box-shadow: 16px 21px 24px 9px #000000;
+}
+
+.calculator-grid>button {
+  cursor: pointer;
+  font-size: 1.5rem;
+  /* Riduci la dimensione del font dei pulsanti a 1.5rem */
+  border: 1px solid white;
+  outline: none;
+  background-color: rgba(240, 240, 240, 0.76);
+}
+
+.calculator-grid>button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.output {
+  border-radius: 10px 10px 0 0;
+  grid-column: 1 / -1;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.output .previous-operand {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.2rem;
+  /* Riduci la dimensione del font del testo precedente a 1.2rem */
+}
+
+.output .current-operand {
+  color: rgb(255, 255, 255);
+  font-size: 1.8rem;
+  /* Riduci la dimensione del font del testo corrente a 1.8rem */
+}
+
+.containerTitle {
+  width: 100%;
+  height: 80px;
+  /* Riduci l'altezza del container del titolo a 80px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerTitle h1 {
+  font-size: 1.8rem;
+  /* Riduci la dimensione del font del titolo a 1.8rem */
+  padding-top: 10px;
+}
+
+.current-operand.small-text {
+  font-size: 1.6rem;
+  /* Riduci la dimensione del font del testo corrente quando è in modalità small-text a 1.6rem */
+}
+
+/* Media queries per dispositivi mobili */
+@media screen and (max-width: 768px) {
+  .calculator-grid {
+    grid-template-columns: repeat(4, 60px);
+    /* Riduci ulteriormente la larghezza delle colonne a 60px per dispositivi mobili */
+    grid-template-rows: minmax(80px, auto) repeat(5, 60px);
+    /* Riduci ulteriormente l'altezza delle righe a 60px per dispositivi mobili */
+  }
+
+  .calculator-grid>button {
+    font-size: 1.2rem;
+    /* Riduci ulteriormente la dimensione del font dei pulsanti a 1.2rem per dispositivi mobili */
+  }
+
+  .output .previous-operand {
+    font-size: 1rem;
+    /* Riduci ulteriormente la dimensione del font del testo precedente a 1rem per dispositivi mobili */
+  }
+
+  .output .current-operand {
+    font-size: 1.4rem;
+    /* Riduci ulteriormente la dimensione del font del testo corrente a 1.4rem per dispositivi mobili */
+  }
+
+  .containerTitle h1 {
+    font-size: 1.4rem;
+    /* Riduci ulteriormente la dimensione del font del titolo a 1.4rem per dispositivi mobili */
+  }
+
+  .current-operand.small-text {
+    font-size: 1.2rem;
+    /* Riduci ulteriormente la dimensione del font del testo corrente quando è in modalità small-text a 1.2rem per dispositivi mobili */
+  }
+}
